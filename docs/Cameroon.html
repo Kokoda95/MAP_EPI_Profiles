@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Cameroon.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li>
+  <a href="Tanzania.html">Tanzania</a>
+</li>
+<li>
+  <a href="Cameroon.html">Cameroon</a>
+</li>
+<li>
+  <a href="Benin.html">Benin</a>
+</li>
+<li>
+  <a href="Burkina-Faso.html">Burkina Faso</a>
+</li>
+<li>
+  <a href="Nigeria.html">Nigeria</a>
+</li>
+<li>
+  <a href="Mozambique.html">Mozambique</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="logos/map_logo.png" width="20%" style="display: block; margin: auto 0 auto auto;" /></p>
+<hr />
+<div id="cameroon-malaria-epidemiology-summary" class="section level3">
+<h3><strong>Cameroon Malaria Epidemiology Summary</strong></h3>
+<hr />
+<div id="introduction" class="section level4">
+<h4><strong>Introduction</strong></h4>
+<p>Cameroon located in Central Africa, borders Nigeria to the west and
+north, Chad to the northeast, the Central African Republic to the east,
+and Equatorial Guinea, Gabon, and the Republic of the Congo to the
+south. It’s population is about 27 million people (<em>Cameroon National
+Institute of Statistics projections, 2022</em>) and the official
+languages are French and English. The World Malaria Report 2024 lists
+Cameroon among the 11 African countries accounting for nearly two-thirds
+of global malaria cases and deaths.</p>
+</div>
+<div id="administrative-boundaries" class="section level4">
+<h4><strong>Administrative Boundaries</strong></h4>
+<p>Cameroon is divided into 10 semi-autonomous regions, governed by
+elected Regional Councils and overseen by presidential appointed
+governors. Regions are further divided into 58 divisions (départements),
+led by divisional officers (préfets), and subdivided into sub-divisions
+(arrondissements) managed by assistant divisional officers
+(sous-préfets). The smallest units, districts, are administered by
+district heads (chefs de district) and are found in remote or large
+sub-divisions. The administrative and health systems are distinct but
+overlap at the regional level. The health system’s 200 districts are
+where malaria decisions are tailored to local needs.</p>
+<p><img src="Cameroon_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+</div>
+<div id="health-system-reporting" class="section level4">
+<h4><strong>Health System Reporting</strong></h4>
+<p>Cameroon’s health system is decentralized to the regions, there are
+10 regions each with a Regional delegation of public health. It operates
+in a pyramidal structure with three levels. The central level oversees
+policy, regulation, and supervision, managing general and central
+hospitals. The intermediate level includes regional health delegations
+and hospitals, providing technical and supervisory support to health
+districts. The peripheral level focuses on service delivery through a
+network of 200 health districts and 1,795 health areas, which include
+facilities like district hospitals, integrated health centers, and
+health posts. Across all levels, the country has 6,124 health
+facilities, with 54% of services delivered by the private sector.
+However, only 5,795 facilities currently offer malaria services.
+Healthcare service in Cameroon is provided by public, private, faith
+based and NGOs as well as traditional healers.</p>
+<p>Cameroon also has 9,575 Community Health Workers (CHWs) providing
+preventive and curative care. CHWs report to the leading health
+facilities within their areas, with data integrated into the Health
+Management Information System (HMIS). Despite their critical role,
+Cameroon has not yet met its target of 15,000 CHWs, leaving some areas
+under-served.</p>
+<p><img src="CMRN/HS.png" width="100%" /></p>
+</div>
+<div id="types-of-malaria-data" class="section level4">
+<h4><strong>Types of Malaria Data</strong></h4>
+<p>The District Health Information System (DHIS2) was adopted by
+Cameroon in 2015. Health facilities and CHWs in Cameroon collect data
+using harmonized registers, consolidating it weekly for disease
+surveillance and monthly for routine activities via paper forms.
+Facilities with digital capacity enter data directly into the DHIS2
+platform, while others send paper-based reports to health districts for
+entry. The CHWs report data of all ages as highlighted in the table
+below. The routine health system collect the following malaria indicator
+data:</p>
+<p><img src="CMRN/rdata.jpg" width="100%" height="100%" /></p>
+<p>Moreover, the country has gathered information on malaria prevention,
+treatment and prevalence through surveys such as Demographic Health
+Surveys (DHS), Malaria Indicator Cluster Surveys (MICS), Malaria
+Indicator Surveys (MIS), and behaviors influence the prevention and
+treatment practices through Malaria Behavior Survey (MBS).</p>
+<p><img src="CMRN/sdata.jpg" width="100%" height="100%" /></p>
+</div>
+<div id="history-of-malaria" class="section level4">
+<h4><strong>History of Malaria</strong></h4>
+<p>The graphic below illustrates the trend of malaria prevalence in
+Cameroon since 2004, alongside significant events that have occurred.
+The prevalence values are based on data from Demographic and Health
+Surveys (DHS) and Malaria Indicator Surveys (MIS). Additionally, the
+country has implemented four National Malaria Strategic Plans (NMSPs) at
+varying intervals.</p>
+<p><img src="CMRN/MHist.png" width="100%" /></p>
+</div>
+<div id="weather-and-seasonality" class="section level4">
+<h4><strong>Weather and Seasonality</strong></h4>
+<p>Cameroon has a highly diverse ecology and climate that support the
+development of malaria vectors, with variations across it’s regions. The
+southern part, including the Central, Eastern, Littoral, South, and
+South-West regions, is characterized by dense forests, a vast
+hydrographic network, and a hot, humid equatorial climate with abundant
+rainfall, conducive to malaria transmission. The coastal plain at the
+Gulf of Guinea is at low altitude, while the highlands in the West and
+North-West regions, with volcanic soils and altitudes above 1,100 m,
+feature less dense vegetation and cooler climates. The northern Sahelian
+Sudan region, encompassing Adamaoua, North, and Far North regions,
+transitions from temperate climates with shrub Savannah to hot, dry
+zones near Lake Chad.</p>
+<p>Cameroon has three main climatic zones: the equatorial climate
+(2°–6°N) with abundant rainfall and either a bi modal pattern (two rainy
+and two dry seasons) in the south or a long rainy season (9 months) in
+the South-West and Western Highlands; the Sudanese tropical climate
+(6°–8°N) with a single rainy season (March–October) and dry season
+(November–February); and the Sahelian tropical climate (north of 8°N)
+with a shorter rainy season (3–5 months, June–October) and decreasing
+rainfall towards Lake Chad.</p>
+<p><img src="Cameroon_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="current-stratification" class="section level4">
+<h4><strong>Current Stratification</strong></h4>
+<p>Malaria stratification map for Cameroon was last updated in 2023. It
+was developed by combining data on malaria prevalence, malaria
+incidence, and all-cause mortality rates in children under 5 years of
+age to classify country’s heath districts into; very high, high, medium,
+and low risk.</p>
+<p><img src="CMRN/CMRN_stratification_map/2.png" width="100%" /></p>
+<p><em><strong>Description</strong> : Epidemiological Stratification of
+Health Districts in Cameroon. <br> <strong>Source</strong> :
+U.S.President’s Malaria Initiative Cameroon Malaria Profile.</em></p>
+</div>
+<div id="reference" class="section level4">
+<h4><strong>Reference</strong></h4>
+<ol style="list-style-type: decimal">
+<li>Cameroon National Malaria Strategic Plan (NMSP 2019-2023)</li>
+<li><a href="https://www.severemalaria.org/">Severe malaria
+observatory</a></li>
+<li><a href="https://www.pmi.gov/">PMI malaria operation plans</a></li>
+<li><a
+href="https://malariaportal.org/index.php/country-rhis-profiles">Malaria
+HIS portals</a></li>
+<li><a
+href="https://assets-eu.researchsquare.com/files/rs-4361698/v1/5aa8079f-11e2-46a3-bb41-566f9cbd921b.pdf?c=1715709741">Cameroon
+malaria case management</a></li>
+<li><a
+href="https://www.researchgate.net/figure/Pyramidal-organization-of-health-facility-system-in-Cameroon-Note-Health-facilities-are_fig1_380401132">Cameroon
+health system</a></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

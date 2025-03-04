@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Tanzania.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li>
+  <a href="Tanzania.html">Tanzania</a>
+</li>
+<li>
+  <a href="Cameroon.html">Cameroon</a>
+</li>
+<li>
+  <a href="Benin.html">Benin</a>
+</li>
+<li>
+  <a href="Burkina-Faso.html">Burkina Faso</a>
+</li>
+<li>
+  <a href="Nigeria.html">Nigeria</a>
+</li>
+<li>
+  <a href="Mozambique.html">Mozambique</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="logos/map_logo.png" width="20%" style="display: block; margin: auto 0 auto auto;" /></p>
+<hr />
+<div id="tanzania-malaria-epidemiology-summary" class="section level3">
+<h3><strong>Tanzania Malaria Epidemiology Summary</strong></h3>
+<hr />
+<div id="introduction" class="section level4">
+<h4><strong>Introduction</strong></h4>
+<p>Tanzania is located in East Africa, borders Kenya and Uganda to the
+north, Rwanda, Burundi, and the Democratic Republic of Congo to the
+west, Zambia, Malawi, and Mozambique to the south, and the Indian Ocean
+to the east. Its population was about 62 million people in the 2022
+population and housing census, the official languages are Swahili and
+English. According to the World Malaria Report 2024, Tanzania accounted
+for approximately 4.3% of global malaria deaths in 2023.</p>
+</div>
+<div id="administrative-boundaries" class="section level4">
+<h4><strong>Administrative Boundaries</strong></h4>
+<p>Mainland Tanzania’s administrative structure consists of regions and
+councils, with each region comprising an average of seven councils.
+Councils, categorized as district (rural), town, municipal, or city
+(urban), are subdivided into divisions, wards, and villages. They play a
+pivotal role in implementing public services and health policies,
+including those of the Ministry of Health and the National Malaria
+Control Program (NMCP). Currently, there are 26 regions and 184
+councils.</p>
+<p><img src="Tanzania_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+</div>
+<div id="health-system-reporting" class="section level4">
+<h4><strong>Health System Reporting</strong></h4>
+<p>The Tanzanian National Health System operates under a centralized
+government structure,where the Ministry of Health (MoHCDGEC) and the
+President’s Office for Regional Administration and Local Government
+(PO-RALG) share responsibilities for public health services. The
+MoHCDGEC handles policy-making, guidelines development, and monitoring,
+while directly managing referral hospitals.</p>
+<p>There are 10,269 registered and functional health care facilities in
+Tanzania, including hospitals, health centers, and dispensaries. The
+healthcare system in Tanzania is based on hierarchical system
+represented by administrative level, type and function of facility. The
+system includes referral structure from primary health care to tertiary
+level.Dispensaries, health centers and district hospitals serve as
+primary level services, while regional hospitals are the secondary level
+services for referrals from district hospitals, zonal hospitals serve as
+referrals from regional hospitals, and finally, national hospital is a
+referral from both zonal and regional hospitals. Both zonal and national
+hospitals serve as tertiary level services. In addition, there are
+specialized hospitals that do not fit directly into this hierarchy and
+therefore are directly linked to the ministry of health.</p>
+<p>Malaria diagnostic and treatment services are offered by 6,357 public
+institutions, 873 faith-based organizations, and 1,014 private health
+health facilities. Preventive therapies for pregnant women are offered
+in over 7,000 reproductive, child health clinics. About 40% of patients
+with fever seek treatment at private health facilities.</p>
+<p>Moreover, community health workers (CHWs) play important role by
+routinely collecting community health data during household visits and
+community activities, and facilitating referrals from community level to
+health facilities. CHWs use MTUHA Book No. 3 for daily data collection,
+with tools stored at the health facility. Monthly, the facility
+in-charge will compile summaries into MTUHA Book No.10 for entry into
+the HMIS/DHIS2 system or submission to the council for entry (<a
+href="https://www.communityhealthdeliverypartnership.org/media/526/file/Tanzania+mainland+approved+CHR+profile+24th+Nov+2023.pdf.pdf">Community
+Health Roadmap</a>). Currently, there are 20,487 CHWs and the country
+plans to reach over 150,000 CHWs in the period of 5 years.</p>
+<p><img src="TZN/HS.png" width="100%" /></p>
+</div>
+<div id="types-of-malaria-data" class="section level4">
+<h4><strong>Types of Malaria Data</strong></h4>
+<p>Mainland Tanzania adopted the District Health Information System
+(DHIS2) platform in 2013 by transitioning the national routine health
+information system (RHIS), and integrating the electronic Integrated
+Disease Surveillance and Response (e-IDSR) for priority disease into
+DHIS2. The data flow from health facilities (HFs) through councils and
+regions to the national level. The key malaria indicators reported
+through routine surveillance system are shown in the table below.</p>
+<p><img src="TZN/rdata.jpg" width="100%" /></p>
+<p>We have compiled the common national surveys along with the malaria
+indicators collected. Additionally, the Tanzania National Malaria
+Control Program (NMCP) conducts the School Malaria Parasitaemia Survey
+(SMPS) every two years to monitor malaria prevalence among primary
+school children. However, this data is not publicly available. The most
+recent survey was conducted in July, 2023 (<a
+href="https://dhis2.udsm.ac.tz/project/school-malaria-parasitaemia-survey-smps-in-cmis/">UDSM
+DHIS2 LAB</a>).</p>
+<p><img src="TZN/sdata.jpg" width="100%" /></p>
+</div>
+<div id="history-of-malaria" class="section level4">
+<h4><strong>History of Malaria</strong></h4>
+<p>The graphic below illustrates the trend of malaria prevalence in
+Tanzania since 2004, alongside significant events that have occurred.
+The prevalence values are based on data from Demographic and Health
+Surveys (DHS) and Malaria Indicator Surveys (MIS). Additionally, the
+country has implemented three National Malaria Strategic Plans (NMSPs)
+at varying intervals.</p>
+<p><img src="TZN/MHist.png" width="100%" /></p>
+</div>
+<div id="weather-and-seasonality" class="section level4">
+<h4><strong>Weather and Seasonality</strong></h4>
+<p>Tanzania’s tropical climate, shaped by its diverse topography,
+influences malaria transmission. Coastal regions are warm and humid,
+lake regions have relatively high temperature and humidity and heavier
+rainfall, while the Central Plateau (semi-arid) and Highlands
+(temperate) are cooler with seasonal variations. Rainy seasons
+(March–May and October–December in the north/east; October–April/May in
+central/south/west) and high humidity align with peak malaria
+transmission periods.</p>
+<p><img src="Tanzania_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+</div>
+<div id="current-stratification-map" class="section level4">
+<h4><strong>Current Stratification Map</strong></h4>
+<p>Malaria risk stratification, updated in 2022, was based on councils
+and derived using key indicators: parasite prevalence in school
+children, fever test positivity, annual parasite incidence (API),
+confirmed malaria incidence, and test positivity in pregnant women.
+Scores were assigned per NMCP-defined strata—very low (&lt;1%), low
+(1–5%), moderate (5–30%), and high (&gt;30%)—and summed across
+indicators. Urban councils were categorized separately, reflecting
+unique operational and intervention needs.</p>
+<p><img src="TZN/TZ_stratification_map/1.png" width="100%" /></p>
+<p><em><strong>Description</strong>: Malaria stratification along with
+the table summarizes the number of councils in each epidemiological and
+non-epidemiological strata. <br> <strong>Source</strong>:
+U.S.President’s Malaria Initiative Tanzania (Mainland) Malaria
+Profile</em></p>
+</div>
+<div id="reference" class="section level4">
+<h4><strong>Reference</strong></h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.pmi.gov/">PMI malaria operation plans</a></li>
+<li><a
+href="https://malariaportal.org/index.php/country-rhis-profiles">Malaria
+HIS portals</a></li>
+<li>Tanzania National Malaria Strategic Plan (NMSP 2021-2025)</li>
+<li>Tanzania National Bureau of Statistics (NBS)</li>
+<li><a href="https://www.severemalaria.org/">Severe malaria
+observatory</a></li>
+<li><a
+href="https://www.communityhealthdeliverypartnership.org/media/526/file/Tanzania+mainland+approved+CHR+profile+24th+Nov+2023.pdf.pdf">Community
+health roadmap</a></li>
+<li><a
+href="http://api-hidl.afya.go.tz/uploads/library-documents/1621438892-H1A9nEDv.pdf">National
+guidelines for integrated malaria vector control in Tanzania</a></li>
+</ol>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

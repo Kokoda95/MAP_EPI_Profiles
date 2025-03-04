@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Burkina-Faso.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li>
+  <a href="Tanzania.html">Tanzania</a>
+</li>
+<li>
+  <a href="Cameroon.html">Cameroon</a>
+</li>
+<li>
+  <a href="Benin.html">Benin</a>
+</li>
+<li>
+  <a href="Burkina-Faso.html">Burkina Faso</a>
+</li>
+<li>
+  <a href="Nigeria.html">Nigeria</a>
+</li>
+<li>
+  <a href="Mozambique.html">Mozambique</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="logos/map_logo.png" width="20%" style="display: block; margin: auto 0 auto auto;" /></p>
+<hr />
+<div id="burkina-faso-malaria-epidemiology-summary"
+class="section level3">
+<h3><strong>BURKINA FASO MALARIA EPIDEMIOLOGY SUMMARY</strong></h3>
+<p>Author: Herieth Alexander Last Updated: 17/1/2024</p>
+<hr />
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Key demographic , development and malaria indicators
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:right;">
+Burkina.Faso
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Population
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+23025776.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Urbanization
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+32.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Median Age
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+17.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Prevalence rate (Pfpr6-59)
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+28.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Incidence (/1000 people)
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+353.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Population at risk
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+23025776.0
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources- WORLD BANK , NSP 2021–2025 , DHS Program</em></p>
+<div id="malaria-situation" class="section level4">
+<h4><strong>MALARIA SITUATION</strong></h4>
+<p>Burkina Faso along with 10 other nations bear 70 percent of the
+world’s malaria burden in disease and death. In 2021,it contributed to
+3.3% of global malaria cases and 3.4% of global malaria deaths. Malaria
+incidence increased from 449 cases per 1,000 population in 2015 to 591
+per 1,000 in 2018, despite interventions.Transmission has plateaued
+partly compounded by a rapidly deteriorating security situation in the
+country where 2 coups happened 9 months apart in 2021 and 2022.</p>
+<p>The presence of armed groups isolating and encircling certain areas
+has led to severe limitation on access to and delivery of basic health
+services. This is due to closing of health facilities , displacement of
+people and suspension of partner support and coordination activities in
+some locations. As of November 2024, 10% of the Burkina Faso population
+was displaced and 31% of health facilities were not operational leaving
+approximately 2.5 million individuals with limited access to health
+care. Sahel , East and Center-East regions were the most affected with
+over half of their facilities closed. There is a need to improve access
+to care for internally displaced persons and to ensure continued access
+to quality care for host communities.</p>
+<p><img src="Burkina-Faso_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Malaria incidence remains high, reflecting challenges in reducing
+transmission, with persistent hotspots in districts like Sahel and
+Cascades.The 2021–2025 National Strategic Plan emphasizes stratified
+approaches targeting high-burden districts to achieve targeted
+reductions in both prevalence and incidence.</p>
+<p><img src="BFA/images/Burkina_faso_malaria_map.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="BFA/images/Malaria%20History%20in%20Burkina%20Faso.png" width="80%" /></p>
+<p><strong>Deployed Malaria Control Activities</strong></p>
+<p>The Permanent Secretariat for Malaria Elimination (Secrétariat
+permanent pour l’élimination du paludisme) or SP/Palu is the local
+implementer of malaria control activities with multiple local and
+international partners . For the 2021-2025 plan ,interventions have been
+targeted in key areas namely;</p>
+<ol style="list-style-type: decimal">
+<li>Vector Control</li>
+</ol>
+<ul>
+<li>Insecticide-Treated Nets (ITNs): Mass distribution every three years
+and continuous distribution through ANC visits, schools, and internally
+displaced persons (IDPs) camps.</li>
+<li>Insecticide-Treated Spraying (IRS): Ongoing efforts to reduce vector
+populations.</li>
+<li>Larviciding: Ongoing larviciding to control mosquito larvae in
+breeding sites.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Chemoprevention &amp; Vaccine
+<ul>
+<li>Malaria in Pregnancy (IPTp): Providing intermittent preventive
+treatment (IPTp) to pregnant women with sulfadoxine-pyrimethamine (SP)
+through ANC visits and by community health workers (CHWs).</li>
+<li>Seasonal Malaria Chemoprevention (SMC): Seasonal malaria
+chemoprevention for children aged 3 to 59 months, administered in four
+or five cycles during the rainy season.</li>
+<li>RTS,S Malaria Vaccine: Introduction of the RTS,S malaria vaccine,
+aiming for high vaccination coverage (80% by 2024, 90% by 2025, 85% by
+2026) among children aged 0-12 months in 27 health districts.</li>
+</ul></li>
+<li>Case Management
+<ul>
+<li>National Malaria Treatment Guidelines: Adoption of
+dihydroartemisinin-piperaquine (DP) as first-line treatment and
+artesunate-pyronaridine (ASPY) as second-line treatment.</li>
+<li>Revised Malaria Protocols: Artemether-lumefantrine (AL) as
+third-line treatment for uncomplicated malaria.</li>
+</ul></li>
+<li>Health System Strengthening
+<ul>
+<li>Health Supply Chain and Pharmaceutical Management: Improving the
+availability of malaria commodities, quality control systems, and
+fighting substandard medical products.</li>
+<li>Surveillance, Monitoring, and Evaluation: Malaria data collection,
+validation, and analysis through DHIS2 and regular surveillance
+bulletins to track progress and trends.</li>
+<li>Capacity Strengthening: Enhancing the leadership and management
+skills of the SP/Palu team and building the capabilities of community
+health workers (CHWs) for case management and data collection.</li>
+</ul></li>
+<li>Social and Behavior Change
+<ul>
+<li>Public Awareness and Education: Raising awareness about malaria
+prevention (ITNs, SMC, IRS, IPTp), care-seeking practices, and
+symptoms.</li>
+<li>Community Engagement: Engaging at least 90% of community leaders to
+promote malaria responses and ensure that 80% of the population knows
+key malaria prevention and care information. This includes advocacy,
+interpersonal communication, and mass communication campaigns.</li>
+</ul></li>
+</ol>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+Evolution of Key Malaria Indicators over the years
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+Indicator
+</th>
+<th style="text-align:right;font-weight: bold;">
+2021 DHS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2017-18 MIS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2014 MIS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2010 DHS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2003 DHS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Malaria prevalence according to RDT
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+28.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+20.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+61.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+76.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Malaria prevalence according to microscopy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+14.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+16.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+45.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+65.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Households with at least one insecticide-treated mosquito net (ITN)
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+82.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+75.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+89.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+56.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+5.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Net source: Mass distribution campaign
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+82.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+84.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Persons with access to an insecticide-treated mosquito net (ITN)
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+64.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+54.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+71.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+36.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Population who slept under an insecticide-treated mosquito net (ITN)
+last night
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+61.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+44.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+67.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+31.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Existing insecticide-treated mosquito nets (ITNs) used last night
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+90.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+76.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+85.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+79.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+83.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Households with indoor residual spraying (IRS) in last 12 months
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+0.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+0.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+SP/Fansidar 2+ doses during pregnancy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+79.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+82.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+48.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+38.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+SP/Fansidar 3+ doses during pregnancy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+56.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+57.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+23.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+5.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children under 5 with fever in the last two weeks
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+22.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+20.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+40.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+20.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+36.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children with fever for whom advice or treatment was sought, the source
+was a public sector facility
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+93.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+96.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+87.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+80.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+64.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children with fever for whom advice or treatment was sought, the source
+was a private sector facility
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+7.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+5.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+9.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children who took any ACT
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+48.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+79.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+27.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+24.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="administrative-boundaries" class="section level4">
+<h4>ADMINISTRATIVE BOUNDARIES</h4>
+<p>Burkina Faso has 13 regions with three of these being major cities
+.Administrative Divisions include 13 Regions, 45 Provinces, 351
+Communes, and 70 Health Districts.</p>
+<p><img src="Burkina-Faso_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="malaria-transmission-dynamics" class="section level4">
+<h4>MALARIA TRANSMISSION DYNAMICS</h4>
+<p>Burkina Faso is divided into two climatic regions. The Sahelian
+region forms the northern part highly influenced by the Sahara desert.It
+is hot and arid and malaria transmission peaks during the rainy season
+(June-October). The Sudanese zone is found in the southern part with
+more rainfall exhibits and longer transmission seasons. An intermediate
+region exists with moderate rainfall and high temperatures. Based on
+temperature , rainfall and land cover. Burkina Faso can be divided into
+three regions.</p>
+<p><img src="Burkina-Faso_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>The seasonal peaks are influenced by rainfall(critical for breeding
+sites.) and temperature (influence vector survival).Elevated
+transmission lasts up to three months in the north, six months in the
+center, and nine months in the south. Variation in transmission rates
+are seen with a median lag-time of 10 weeks between rainfall and
+increase in number of cases. Despite these environmental variations
+urban areas tend to experience lower transmission compared to rural
+areas due to infrastructure differences.Three major river basins (Volta,
+Niger, and Comoé) influence malaria vector habitats.</p>
+<p><img src="BFA/images/temporal%20trends%20malaria.PNG" width="80%" /></p>
+<p>Adapted from: <a
+href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290233">spatiotemporal
+distribution of incidence and environmental drivers, and implications
+for control strategies</a></p>
+</div>
+<div id="vector-profile" class="section level4">
+<h4>VECTOR PROFILE</h4>
+<p>The primary vectors are A.gambiae and A . Coluzii . Secondary vectors
+are A. arabiensis which have beeen observed in the West and South West
+areas where they were previously absent. A. gambiae is resistant to all
+pyrethroids and has led to adoption of PBO and G2-intercepor from
+standard pyrethroid nets. EIR have not been influenced by IRS but are
+significantly high outdoors influenced by PBO ITNs which were rolled out
+in 2019.</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Key transmission drivers in Burkina Faso
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:left;">
+Burkina.Faso
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Mosquito species
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+An. gambiae predominates, An. coluzzii An. arabiensis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Parasite
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+Plasmodium falciparum
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Peak transmission season
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+May through October
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Drivers
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+Rainfall, Political Instability
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Weather type
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+Sudanese and Sahelian
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div
+id="organisation-of-health-system-and-implementation-of-malaria-control-efforts"
+class="section level4">
+<h4>ORGANISATION OF HEALTH SYSTEM AND IMPLEMENTATION OF MALARIA CONTROL
+EFFORTS</h4>
+<p>Malaria control strategies and decisions are implemented primarily at
+the health district level, with coordination from regional health
+directorates.Each district oversees planning and implementation of
+malaria interventions, informed by local epidemiology.</p>
+<p><img src="BFA/images/BurkinaHS-diagram.png" width="2304" /></p>
+<p>There are three hospitals at the tertiary level,eight polyclinics at
+the secondary level, and 286 health care establishments at the primary
+level. About 71% of healthcare is offered by public facilities. Private
+facilities are concentrated in the major cities.</p>
+<p>To complement these facilities 593 other health care structures, 243
+pharmacies, and 661 pharmaceutical depots are also present with
+comprehensive community health system, which includes community health
+workers ,community-based organizations, and other civil society actors
+involved in the health sector</p>
+<p><strong>Community Health Workers (CHWs)</strong></p>
+<p>Known as ASBCs (Agents de Santé à Base Communautaire), they are
+crucial in rural and underserved areas. Responsibilities include
+Integrated Community Case Management (iCCM) of malaria, diarrhea, and
+pneumonia in children under five, distributing ITNs, and reporting via
+community-level structures to the health system. CHWs report directly to
+local health teams at CSPS and participate in routine health system
+planning and reviews.Of the 18000 CHW intended to be recruited ,
+currently there are 17648 CHWs where 5595 provide community based case
+management.</p>
+<p><img src="BFA/images/Burkina%20Faso%20Data%20Flow.png" width="512" /></p>
+<p><strong>Schema of Health System Reporting</strong></p>
+<p>The National Health Information System (SNIS) integrates malaria data
+into the DHIS2 platform, operational since the mid-2010s.Three tiers
+exist District , Regional and tertiary hospital data managers who all
+compile data to ENDOS .Integration of data from the private sector into
+the national system remains incomplete but is improving.It tracks
+routine data including suspected cases, confirmed cases by
+RDT/microscopy, treatment rates, severe cases, and deaths. Malaria
+incidence and mortality are reported for key groups (under 5 and over
+5).</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Types of Malaria Data collected for Burkina Faso
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:left;">
+Burkina.Faso
+</th>
+<th style="text-align:left;">
+Breakdown
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+OPD Attendance
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Suspected
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+LLN
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Completeness
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+IPTs
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Tested
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age, Sex and test type
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Cases
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Commodities
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Fevers
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Stock outs
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Deaths
+</td>
+<td style="text-align:left;color: white !important;background-color: grey !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="malaria-stratification-maps" class="section level4">
+<h4><strong>MALARIA STRATIFICATION MAPS</strong></h4>
+<p>Multiple stratification maps exist for Burkina Faso and these have
+been included in the NSP and MOP to inform decison making as well as
+visualize plans of rolling out interventions. Stratification was based
+on malaria burden (parasite prevalence, under-5 mortality rates, and
+health system capacity) where high-transmission zones included northern
+regions (Sahel and Nord).The stratification map was revised in line with
+the HBHI initiative in 2019 and Indicators such as population density,
+proximity to water bodies, and access to healthcare were
+incorporated.</p>
+<p><img src="BFA/images/u5mrbfa.jpg" width="60%" style="display: block; margin: auto;" /><img src="BFA/images/incidencebfa.jpg" width="60%" style="display: block; margin: auto;" /><img src="BFA/images/stratificationbfa.jpg" width="60%" style="display: block; margin: auto;" /><img src="BFA/images/interventionmix.jpg" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="references" class="section level4">
+<h4>REFERENCES</h4>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.pmi.gov/fy-2024-burkina-faso-mop/">PMI MOP</a>
+for more information.</li>
+<li><a
+href="https://drive.google.com/file/d/1d2OgeKJQFcbhP9wUZsA_CPQaIXXCbJpd/view?usp=drive_link">National
+Strategic Plan 2020</a> for more information.</li>
+<li><a
+href="https://www.dhsprogram.com/Countries/Country-Main.cfm?ctry_id=50">DHS
+Country Data</a> for more information.</li>
+<li><a href="https://www.r-project.org/">RHIS</a> for more
+information.</li>
+<li><a
+href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290233">spatiotemporal
+distribution of incidence and environmental drivers, and implications
+for control strategies</a></li>
+<li><a
+href="https://dashboards.endmalaria.org/en/global-community-health">End
+Malaria Global Community Health Dashboard</a></li>
+<li><a
+href="https://reliefweb.int/report/burkina-faso/bulletin-ndeg11-du-cluster-sante-novembre-2024">HEALTH
+CLUSTER - BURKINA FASO BULLETIN No. 11 ,November 2024</a></li>
+</ol>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

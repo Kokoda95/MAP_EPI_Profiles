@@ -1,0 +1,45 @@
+---
+title:
+output: html_document
+---
+
+```{r, echo=FALSE, out.width='20%', fig.align='right'}
+knitr::include_graphics("logos/map_logo.png")
+
+```
+
+Click on a country below to view its malaria profile:
+
+-   [Tanzania](Tanzania.html)
+-   [Cameroon](Cameroon.html)
+-   [Benin](Benin.html)
+-   [Burkina Faso](Burkina-Faso.html)
+-   [Nigeria](Nigeria.html)
+-   [Mozambique](Mozambique.html)
+
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center',out.width='50%'}
+library(sf)
+library(rnaturalearth)
+library(ggplot2)
+
+# Load the map of Africa
+africa <- ne_countries(continent = "Africa", returnclass = "sf")
+
+# List of countries to highlight
+highlight_countries <- c("Angola", "Benin", "Burkina Faso", 
+                         "Cameroon", "Nigeria", "Mozambique", "Tanzania", "Senegal" ,"Sierra Leone" ,"Ghana" , "Benin" , "Ghana", "Dem. Rep. Congo" , "Uganda" )
+
+# Add a new column for highlighting
+africa$highlight <- ifelse(africa$name %in% highlight_countries, "Highlighted", "Not Highlighted")
+
+# Create the map
+ggplot(data = africa) +
+  geom_sf(aes(fill = highlight), color = "darkgrey") +
+  scale_fill_manual(values = c("Highlighted" = "#fdcdac", "Not Highlighted" = "lightgray")) +
+  theme_void() +  # Removes axes and background
+  theme(panel.grid = element_blank())+
+   theme(legend.position = "none")# Removes grid lines
+```

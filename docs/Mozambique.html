@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Mozambique.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li>
+  <a href="Tanzania.html">Tanzania</a>
+</li>
+<li>
+  <a href="Cameroon.html">Cameroon</a>
+</li>
+<li>
+  <a href="Benin.html">Benin</a>
+</li>
+<li>
+  <a href="Burkina-Faso.html">Burkina Faso</a>
+</li>
+<li>
+  <a href="Nigeria.html">Nigeria</a>
+</li>
+<li>
+  <a href="Mozambique.html">Mozambique</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="logos/map_logo.png" width="20%" style="display: block; margin: auto 0 auto auto;" /></p>
+<hr />
+<div id="mozambique-malaria-epidemiology-summary"
+class="section level3">
+<h3><strong>MOZAMBIQUE MALARIA EPIDEMIOLOGY SUMMARY</strong></h3>
+<p><em>Author</em>: Herieth Alexander <em>Last Updated</em>:
+12/12/2024</p>
+<hr />
+<div id="malaria-situation" class="section level4">
+<h4><strong>MALARIA SITUATION</strong></h4>
+<p>Mozambique contributes approximately to 5% of globally observed
+malaria cases annually. This makes it one of the 11 nations that bear 70
+percent of the world’s malaria burden .In Mozambique close to half of
+pediatric admissions are due to malaria and a third of hospital deaths
+are attributed to malaria. Mozambique reported about 10.4 million cases
+and 21,551 deaths in 2022 .Efforts to reduce transmission have resulted
+in some improvements but cyclones and extremist groups have been the
+greatest threats to this progress as the resulting displacement , deaths
+and break in service provision often leave societies vulnerable.</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Key demographic , development and malaria indicators
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:right;">
+Mozambique
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Population
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+33635160.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Urbanization
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+32.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Median Age
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+17.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Prevalence rate (Pfpr6-59)
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+32.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Incidence (/1000 people)
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+316.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Population at risk
+</td>
+<td style="text-align:right;color: white !important;background-color: gray !important;">
+33635160.0
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources- WORLD BANK , MSP 2023-2030 , DHS Program</em></p>
+<p><img src="Mozambique_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Mozambique has about 2500km of coastline along the Indian Ocean
+making it vulnerable to tropical cyclones. On avarage , Mozambique
+experiences 4 to 5 cyclones a year with majority of them not only
+entering its sphere of influence but also making landfall. Nampula,
+Zambézia and Sofala are the regions that have been mostly affected .The
+typical cyclone season depends on the summer monsoon. In the months
+before (May to June) and after (October to November), the most severe
+storms occur.In December 15th , 2024 a Category 4 cyclone made land fall
+. The cyclone named Chido was 50 kilometers in Diamter with speeds of up
+to 220 km/h were measured on the open sea.</p>
+<p><strong>Malaria Control Interventions</strong></p>
+<p>Mozambique has multiple interventions in place to combat malaria
+transmision. Insecticide-Treated Nets (ITNs) are distributed through
+mass campaigns and routine systems. Indoor Residual Spraying (IRS)is
+targeted in high-risk areas. Malaria vaccines based on global evidence
+have been piloted for intergration in routine child immunization.To
+improve outcomes in malaria cases ,Artemisinin-based Combination
+Therapies (ACTs) are used as first-line treatment and there is efforts
+towards Universal testing for suspected cases and Strengthened referral
+systems for severe malaria.</p>
+<p>In addition to current efforts , Mozambique realizes the interplay of
+various factors into malaria transmission and collaboration with
+agriculture, education, and urban planning to mitigate malaria drivers
+(e.g., irrigation projects, housing improvements ) is part of malaria
+mitigation strategies.</p>
+<p>Over the past 20 years , Mozambique has made significant progress in
+malaria control including adoption of policy to direct local
+implementation control activities.</p>
+<p><img src="MZA/images/Malaria%20History%20in%20Mozambique.png" width="85%" /></p>
+<p><strong>Mozambique Malaria Strategic Plan (MSP) 2023-2030
+summary</strong></p>
+<p>Mozambique has set ambitious malaria reduction goals for 2030, aiming
+to decrease national malaria incidence from 392 cases per 1,000 in 2022
+to 216 cases per 1,000, lower hospital mortality from 1 per 100,000 to
+0.77 per 100,000, and eliminate local transmission in 20
+low-transmission districts. To achieve these targets, the country has
+outlined six strategic objectives.</p>
+<p>First, it seeks to strengthen health systems and enhance
+multisectoral coordination to ensure an integrated response. Second,
+Mozambique aims to ensure universal access to effective vector control
+measures and malaria vaccination. Third, all suspected malaria cases
+will be tested and treated to improve case management and reduce
+transmission. Fourth, communication efforts will be enhanced to drive
+behavioral change and community engagement. Fifth, Mozambique will
+strengthen surveillance and response systems to improve data collection
+and rapid intervention. Lastly, efforts will be made to maintain malaria
+services during emergencies, ensuring uninterrupted prevention and
+treatment even in crisis situations.</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+Evolution of Key Malaria Indicators over the time
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+Indicator
+</th>
+<th style="text-align:right;font-weight: bold;">
+2022-23 DHS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2018 MIS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2015 AIS
+</th>
+<th style="text-align:right;font-weight: bold;">
+2011 DHS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Malaria prevalence according to RDT
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+32.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+38.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+40.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+38.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Malaria prevalence according to microscopy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+35.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Households with at least one insecticide-treated mosquito net (ITN)
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+56.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+82.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+66.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+51.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Net source: Mass distribution campaign
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+78.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+88.7
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Persons with access to an insecticide-treated mosquito net (ITN)
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+44.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+68.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+53.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+37.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Population who slept under an insecticide-treated mosquito net (ITN)
+last night
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+38.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+68.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+45.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+29.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Existing insecticide-treated mosquito nets (ITNs) used last night
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+72.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+85.4
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+70.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+68.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Households with indoor residual spraying (IRS) in last 12 months
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+NA
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+15.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+11.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+18.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+SP/Fansidar 2+ doses during pregnancy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+45.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+60.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+35.8
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+19.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+SP/Fansidar 3+ doses during pregnancy
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+25.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+40.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+23.3
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+9.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children under 5 with fever in the last two weeks
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+10.2
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+31.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+29.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+13.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children with fever for whom advice or treatment was sought, the source
+was a public sector facility
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+94.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+95.9
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+88.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+88.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children with fever for whom advice or treatment was sought, the source
+was a private sector facility
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+1.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.1
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+2.5
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+1.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(218, 165, 32, 255) !important;">
+Children who took any ACT
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+85.0
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+98.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+92.6
+</td>
+<td style="text-align:right;background-color: rgba(218, 165, 32, 255) !important;">
+59.9
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>source-<strong>DHS program</strong></em></p>
+<p><img src="MZA/images/mozambique_malaria_map.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="administrative-boundaries" class="section level4">
+<h4><strong>ADMINISTRATIVE BOUNDARIES</strong></h4>
+<p>Mozambique is administratively divided into 11 provinces (
+<em>provincias</em> ), 161 districts( <em>distritos</em> ), 444
+administrative posts ( <em>postos administrativos</em> )and then into
+localities ( <em>localidades</em> ). There are 65 municipalities
+(recently increased).Administrative and health districts are one and the
+same and there is on going efforts to decentralize and improve autonomy
+of Provinces.</p>
+<p>Approximately 66% of Mozambican population resides in rural areas.
+Urbanization is more pronounced in Maputo City, while Zambézia and
+Nampula have a predominantly rural population. The country’s average
+population density is 32 people per km², with coastal and northern
+regions being more densely populated.</p>
+<p><img src="Mozambique_files/figure-html/unnamed-chunk-8-1.png" width="120%" /></p>
+</div>
+<div id="malaria-transmission-patterns" class="section level4">
+<h4><strong>MALARIA TRANSMISSION PATTERNS</strong></h4>
+<p><strong>Role of Climate and Urbanization</strong></p>
+<p>As in most countries, malaria burden is unevenly distributed across
+Mozambique. Urbanization plays a significant role, as people living in
+rural areas are three times more likely to test positive for malaria and
+report more malaria-related deaths . Since most of the population lives
+in rural areas, where health infrastructure is often inadequate, this
+disparity poses a significant challenge.</p>
+<p>Mozambique has a transitional climate ranging from tropical in the
+north to subtropical climate in the south. This is also reflected in
+transmission rates.Transmission decreases as you move from northern and
+coastal areas to south and high attitude areas.Prevalence in the
+Northern and Central regions ranges from 29% in Sofala to 57% in Cabo
+Delgado. Southern Mozambique generally has low transmission, except for
+Inhambane, where prevalence rates have reached as high as 35%.<br />
+Rainy seasons are slightly longer in the north and occur in the months
+of November-to April. There is a lag between onset of rains and the
+annual peak of the malaria outbreak . This varies with each district and
+year but typically ranges from 6 to 10 weeks and therefore the peak in
+malaria prevalence typically occurs around January-March. Negative El
+Niño(La Nina) years increase malaria transmission in the southern
+region.</p>
+<div class="figure" style="text-align: center">
+<img src="MZA/images/Screenshot%202025-02-04%20120353.png" alt="Variation of Malaria Cases and rainfall patterns" width="70%" />
+<p class="caption">
+Variation of Malaria Cases and rainfall patterns
+</p>
+</div>
+<p>Adapted from:<a
+href="https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2020GH000322">Interannual
+climate variability and malaria in Mozambique. GeoHealth,Harp et
+al</a></p>
+<p><strong>Vector and parasite species</strong></p>
+<p>Malaria in Mozambique is primarily caused by Plasmodium falciparum,
+the most virulent malaria parasite. The disease is transmitted by
+various Anopheles mosquito species, with Anopheles gambiae being
+dominant in the northern and central regions, while An. funestus is
+widespread along the coast. In the south and central areas, An.
+arabiensis is a key vector. An emerging concern is An. stephensi, which
+poses a growing threat, particularly in urban environments.</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Key agents in Malaria Transmision
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:left;">
+Mozambique
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Mosquito species
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+Anopheles gambiae s.s., An. arabiensis, and An. funestus s.s.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Parasite
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+Plasmodium falciparum
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Peak transmission season
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+October through March
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Drivers
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+Rainfall, Atitude , Cyclones
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Extreme weather events
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+Cyclones
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Weather type
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+Tropical to Subtropical
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div
+id="organisation-of-health-administration-service-delivery-and-reporting"
+class="section level4">
+<h4><strong>ORGANISATION OF HEALTH ADMINISTRATION , SERVICE DELIVERY AND
+REPORTING</strong></h4>
+<p>Public health services cater to approximately 60% of the population,
+with private facilities serving about 10%.There has been progressive
+investment in health infrastructure, particularly rural healthcare.The
+health sector is coordinated nationally by the Ministry of Health
+(MISAU), with implementation devolved to Provincial Health Directorates
+(DPS) and District Health Services (SDSMAS). There is efforts to
+decentralize resources and decision-making authority from central to
+provincial level.</p>
+<p>The healthcare system is hierarchically structured into four
+levels:</p>
+<ul>
+<li><p>Level I &amp; II: Primary care, peripheral facilities (health
+posts and rural clinics)</p></li>
+<li><p>Level III &amp; IV: Secondary and tertiary care with specialized
+services.</p></li>
+</ul>
+<p><strong>Community Health Workers (CHWs):</strong></p>
+<p>CHWs, locally known as Agentes Polivalentes Elementares (APEs) play a
+critical role in healthcare delivery, especially in remote areas.There
+are 17,648 deployed out of 18,000 planned and 5595 of these are involved
+in diagnosing and treating uncomplicated malaria as well as promoting
+preventive measures, and referring severe cases. APEs are keystone for
+malaria control in rural and remote areas.</p>
+<div class="figure" style="text-align: center">
+<img src="MZA/images/MozambiqueHS-diagram.png" alt="Organisation of Health Administration and Service delivery" width="80%" />
+<p class="caption">
+Organisation of Health Administration and Service delivery
+</p>
+</div>
+<p>Mozambique transitioned from paper based reporting that was
+aggregated at district ,provincial and national level to a DHIS2 based
+system in 2015. While the initial approach was reliable and consistent ,
+the quality of data did not meet malaria control management needs.
+Currently a full information M&amp;E system based on the DHIS2 platform
+collects malaria data. This includes outpatient attendance, testing, and
+confirmed cases, with dis aggregation by age and gender. Facilities with
+electronic systems fill data directly to the system and paper based
+records are entered into the system by District health teams .Efforts
+are underway to strengthen real-time data availability for
+decision-making.</p>
+<p><img src="MZA/images/Mozambique%20data%20Flow.png" width="85%" style="display: block; margin: auto;" /></p>
+<p>Surveys like IMASIDA (Immunization, Malaria, HIV Indicators Survey)
+provide periodic data on treatment-seeking behavior, bed-net use, and
+coverage of interventions. Indicators tracked include Outpatient visits
+for suspected malaria , Laboratory-confirmed cases by rapid diagnostic
+tests (RDTs) with Age-disaggregated data on positive cases as well as
+bed-net coverage and use.</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+SCHEMA OF REPORTING AND DIS-AGREGATION OF HEALTH INFORMATION
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Metric
+</th>
+<th style="text-align:left;">
+Mozambique
+</th>
+<th style="text-align:left;">
+Breakdown
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+OPD Attendance
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Suspected
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+LLN
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Completeness
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+IPTs
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Tested
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age, Sex and test type
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Cases
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Commodities
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Fevers
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Stock outs
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: black !important;background-color: rgba(218, 165, 32, 255) !important;">
+Deaths
+</td>
+<td style="text-align:left;color: white !important;background-color: gray !important;">
+YES
+</td>
+<td style="text-align:left;">
+Age and Sex
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="current-stratification-maps" class="section level4">
+<h4><strong>CURRENT STRATIFICATION MAPS</strong></h4>
+<p>Mozambique incorporated maps to inform decison making and planning .
+A structured approach to optimizing malaria interventions in Mozambique
+involves using complementary analytical methods. It begins with spatial
+analysis of malaria burden to prioritize high-impact areas. Empirical
+data analysis and mathematical models help refine intervention targeting
+by evaluating past interventions and predicting optimal strategies.
+Cost-effectiveness analysis ensures interventions maximize case
+reductions within a fixed budget over five years. Finally, operational
+feasibility adjustments account for logistical and geographic
+constraints, ensuring interventions are practical and effectively
+implemented. This multi-faceted approach enhances the impact and
+efficiency of malaria control efforts.In addition to prevalence and
+incidence maps , risk maps and vulnerability to epidemics are mapped at
+district level. This aids with tailoring of interventions.</p>
+<div class="figure" style="text-align: center">
+<img src="MZA/images/incidencemza.jpg" alt="Malaria incidence trend at district level" width="80%" />
+<p class="caption">
+Malaria incidence trend at district level
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="MZA/images/img261.jpg" alt="Malaria prevalence in Under-fives by Province" width="40%" />
+<p class="caption">
+Malaria prevalence in Under-fives by Province
+</p>
+</div>
+<p>``</p>
+<div class="figure" style="text-align: center">
+<img src="MZA/images/interventionsmza.jpg" alt="Tailored Intervention Packages based on burden" width="80%" />
+<p class="caption">
+Tailored Intervention Packages based on burden
+</p>
+</div>
+</div>
+<div id="references" class="section level4">
+<h4><strong>REFERENCES</strong></h4>
+<ol style="list-style-type: decimal">
+<li><a
+href="https://www.pmi.gov/wp-content/uploads/2024/04/FY-2024-Mozambique-MOP-1.pdf">PMI
+MOP</a></li>
+<li><a
+href="https://drive.google.com/file/d/1pwltiFoG4WESYsBspG4SR4nTJyyrmaE_/view">National
+Strategic Plan 2023</a></li>
+<li><a
+href="https://www.dhsprogram.com/Countries/Country-Main.cfm?ctry_id=61/">DHS
+Country Data</a></li>
+<li><a
+href="https://drive.google.com/file/d/1_qfr-xuowp4cPTpSH28I695BYzwLDtKe/view/">RHIS</a></li>
+<li><a
+href="https://web-archive.lshtm.ac.uk/www.linkmalaria.org/sites/link/files/content/country/profiles/Mozambique-profile-web.pdf">Epidemiology
+and control profile of malaria in Mozambique</a></li>
+<li><a
+href="https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2020GH000322">Interannual
+Climate Variability and Malaria in Mozambique</a></li>
+<li><a
+href="https://dashboards.endmalaria.org/en/global-community-health">End
+Malaria Global Community Health Dashboard</a></li>
+</ol>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+title: "Home"
+navbar:
+  left:
+    - text: "About"
+      href: index.html
+    - text: "Tanzania"
+      href: Tanzania.html
+    - text: "Cameroon"
+      href: Cameroon.html
+    - text: "Benin"
+      href: Benin.html
+    - text: "Burkina Faso"
+      href: Burkina-Faso.html
+    - text: "Nigeria"
+      href: Nigeria.html
+    - text: "Mozambique"
+      href: Mozambique.html  
+output_dir: "docs"
+
+output:
+  html_document:
+     theme: cosmo
+     highlight: textmate
