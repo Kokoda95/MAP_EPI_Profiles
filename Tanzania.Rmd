@@ -237,7 +237,6 @@ ggplot()  +
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "tr")
   
-ggsave(filename = "../ProBackup/tanzania_peak.png")  
 ```
 
 

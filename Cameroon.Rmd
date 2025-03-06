@@ -109,8 +109,6 @@ ggplot() +
                          height = unit(0.8, "cm"),
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "bl")
-
-ggsave(filename = "../ProBackup/cameroon_adm.png")
 ```
 
 #### **Health System Reporting**
@@ -186,8 +184,6 @@ ggplot() +
                          height = unit(0.8, "cm"),
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "bl")
-  
-ggsave(filename = "../ProBackup/cameroon_peak.png")  
 ```
 
 

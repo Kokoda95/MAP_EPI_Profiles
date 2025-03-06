@@ -110,8 +110,6 @@ ggplot() +
                          height = unit(0.8, "cm"),
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "br")
-
-ggsave(filename = "../ProBackup/benin_adm.png")
 ```
 
 #### **Health System Reporting**
