@@ -22,6 +22,7 @@ Click on a country below to view its malaria profile:
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center',out.width='50%'}
 library(sf)
+library(plotly)
 library(rnaturalearth)
 library(ggplot2)
 
@@ -36,10 +37,14 @@ highlight_countries <- c("Angola", "Benin", "Burkina Faso",
 africa$highlight <- ifelse(africa$name %in% highlight_countries, "Highlighted", "Not Highlighted")
 
 # Create the map
-ggplot(data = africa) +
-  geom_sf(aes(fill = highlight), color = "darkgrey") +
-  scale_fill_manual(values = c("Highlighted" = "#fdcdac", "Not Highlighted" = "lightgray")) +
-  theme_void() +  # Removes axes and background
-  theme(panel.grid = element_blank())+
-   theme(legend.position = "none")# Removes grid lines
+p <- ggplot(data = africa) +
+     geom_sf(aes(fill = highlight, text = name), color = "darkgrey") +
+     scale_fill_manual(values = c("Highlighted" = "#fdcdac", "Not Highlighted" = "lightgray")) +
+     theme_void() +  # Removes axes and background
+     theme(panel.grid = element_blank())+
+     theme(legend.position = "none")# Removes grid lines
+p
+
 ```
+
+

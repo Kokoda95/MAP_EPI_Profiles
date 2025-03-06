@@ -152,7 +152,6 @@ ggplot() +
                          height = unit(0.8, "cm"),
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "tr")
-
 ```
 
 #### **Health System Reporting**
@@ -238,13 +237,13 @@ ggplot()  +
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "tr")
   
-  
+ggsave(filename = "../ProBackup/tanzania_peak.png")  
 ```
 
 
 #### **Current Stratification Map**
 
-Malaria risk stratification, updated in 2022, was based on councils and derived using key indicators: parasite prevalence in school children, fever test positivity, annual parasite incidence (API), confirmed malaria incidence, and test positivity in pregnant women. Scores were assigned per NMCP-defined strata—very low (<1%), low (1–5%), moderate (5–30%), and high (>30%)—and summed across indicators. Urban councils were categorized separately, reflecting unique operational and intervention needs.
+Malaria risk stratification, updated in 2022, was based on councils and derived using key indicators: parasite prevalence in school children, fever test positivity, annual parasite incidence (API), confirmed malaria incidence, and test positivity in pregnant women. Scores were assigned per NMCP-defined strata (very low (<1%), low (1–5%), moderate (5–30%), and high (>30%)) and summed across indicators. Urban councils were categorized separately, reflecting unique operational and intervention needs.
 
 ```{r echo=FALSE, out.width="100%"}
 knitr::include_graphics("TZN/TZ_stratification_map/1.png")

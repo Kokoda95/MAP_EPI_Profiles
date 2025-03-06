@@ -103,14 +103,14 @@ ggplot() +
   labs(
     title = "Geographical Map of Cameroon",
     subtitle = "Health Districts in Each Region",
-    caption = "Data Source: Humanitarian Data Exchange & Protected Planet",
+    caption = "Data Source: HDX & Protected Planet",
     fill = "Legend") +
   annotation_north_arrow(location = "tr",
                          height = unit(0.8, "cm"),
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "bl")
 
-
+ggsave(filename = "../ProBackup/cameroon_adm.png")
 ```
 
 #### **Health System Reporting**
@@ -187,7 +187,7 @@ ggplot() +
                          width = unit(0.4, "cm")) +
   annotation_scale(location = "bl")
   
-  
+ggsave(filename = "../ProBackup/cameroon_peak.png")  
 ```
 
 
