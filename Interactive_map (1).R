@@ -1,34 +1,4 @@
----
-title:
-output: html_document
----
-
-```{r, echo=FALSE, out.width='20%', fig.align='right'}
-knitr::include_graphics("logos/map_logo.png")
-
-```
-
-Click on a country below to view its malaria profile:
-
--   [Tanzania](Tanzania.html)
--   [Cameroon](Cameroon.html)
--   [Benin](Benin.html)
--   [Burkina Faso](Burkina-Faso.html)
--   [Nigeria](Nigeria.html)
--   [Mozambique](Mozambique.html)
-
-
-
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center',out.width='50%'}
-library(sf)
-library(plotly)
-library(rnaturalearth)
-library(ggplot2)
-
-# Load the map of Africa
-africa <- ne_countries(continent = "Africa", returnclass = "sf")
-
+## Interactive landing map ###################################################################
 
 # Load libraries
 library(sf)
@@ -41,20 +11,10 @@ africa <- ne_countries(continent = "Africa", returnclass = "sf")
 
 # 2. Create the named vector for country->link
 country_links <- c(
-  "Nigeria"          = "Nigeria.html",
-  "Mozambique"       = "Mozambique.html",
-  "Burkina Faso"     = "Burkina-faso.html",
-  "Tanzania"         = "Tanzania.html",
-  "Angola"           = "Coming-soon.html",
-  "Benin"            = "Benin.html",
-  "Cameroon"         = "Cameroon.html",
-  "Senegal"          = "Coming-soon.html",
-  "Sierra Leone"     = "Coming-soon.html",
-  "Ghana"            = "Coming-soon.html",
-  "Dem. Rep. Congo"  = "Coming-soon.html",
-  "Uganda"           = "Coming-soon.html"
+  "Nigeria"        = "Nigeria.Rmd",
+  "Mozambique"     = "Mozambique.html",
+  "Burkina Faso"   = "Burkina-faso.html"
 )
-
 
 # Build the leaflet map where the user will be taken to the country profile page upon clicking
 africa_map <- leaflet(africa) %>%
@@ -91,8 +51,5 @@ africa_map <- onRender(
   ")
 )
 
+# Print the map in your  about.Rmd ######
 africa_map
-
-```
-
-

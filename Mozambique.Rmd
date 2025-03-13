@@ -41,7 +41,6 @@ library(dplyr)
 library(sf)             # For spatial data manipulation
 library(rnaturalearth)  # For country shapefiles
 library(rnaturalearthdata)
-library(rnaturalearthhires)
 library(renv)
 library(terra)
 library(openxlsx)
