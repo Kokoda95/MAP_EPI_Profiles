@@ -1,7 +1,6 @@
 # MALARIA EPI PROFILES 
 This repository hosts a collaborative initiative to build a shared understanding on malaria transmission , control efforts and dynamics in the countries we support . 
 The website is built with R  website bulider and r compiles and organizes both data and information from public sources, scientific research, grey literature, and expert insights.
-Using R scripts, we clean and process the data, analyze trends through statistical and spatial methods, and create interactive maps and visualizations. 
 
 ---
 
