@@ -16,6 +16,7 @@ Click on a country below to view its malaria profile:
 -   [Burkina Faso](Burkina-Faso.html)
 -   [Nigeria](Nigeria.html)
 -   [Mozambique](Mozambique.html)
+-   [Angola](Angola.html)
 
 
 
@@ -45,7 +46,7 @@ country_links <- c(
   "Mozambique"       = "Mozambique.html",
   "Burkina Faso"     = "Burkina-faso.html",
   "Tanzania"         = "Tanzania.html",
-  "Angola"           = "Coming-soon.html",
+  "Angola"           = "Angola.html",
   "Benin"            = "Benin.html",
   "Cameroon"         = "Cameroon.html",
   "Senegal"          = "Coming-soon.html",

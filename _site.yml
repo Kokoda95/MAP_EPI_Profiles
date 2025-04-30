@@ -15,7 +15,9 @@ navbar:
     - text: "Nigeria"
       href: Nigeria.html
     - text: "Mozambique"
-      href: Mozambique.html  
+      href: Mozambique.html 
+    - text: "Angola"
+      href: Angola.html 
 output_dir: "docs"
 
 output:
