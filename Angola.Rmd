@@ -140,7 +140,7 @@ During colonial times, quinine was used, later replaced by chloroquine in the 19
 
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
-knitr::include_graphics("ANG/malaria_history1.png")
+knitr::include_graphics("ANG/malaria_history.png")
 
 
 ```
