@@ -17,6 +17,17 @@ knitr::include_graphics("logos/map_logo.png")
 
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  include = TRUE,
+  fig.align = 'center',
+  out.width = '100%'
+)
+```
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
 
 # 
 # install.packages("tidyverse")
@@ -123,18 +134,13 @@ ggplotly(map_plot,tooltip = "text")
 #### **History of malaria**
 
 
-Malaria remains a major public health challenge in Angola, with Plasmodium falciparum being the predominant parasite responsible for the majority of cases. During colonial times, quinine was used, later replaced by chloroquine in the 1950s. By the late 1970s, drug resistance to chloroquine emerged and by the early 2000s, artemisinin-based combination therapies (ACTs) were introduced, becoming the first-line treatment by 2007/2008.
-
-Angola has since implemented several national strategies, including the current National Malaria Strategic Plan (2021-2025), aiming to reduce cases and deaths by at least 40% and 50% respectively. Recent years have seen steady progress with malaria deaths dropping from 35 per 100,000 in 2022 to 20 per 100,000 in early 2024.
-
-Cross-border initiatives such as Trans-Kunene Malaria Initiative with Namibia (launched in 2011) and community-based campaigns like "Zero Malaria Starts with Me", are helping sustain progress, though challenges like insecticide resistance and access to care remain.
-
+During colonial times, quinine was used, later replaced by chloroquine in the 1950s. By the late 1970s, drug resistance to chloroquine emerged and by the early 2000s, artemisinin-based combination therapies (ACTs) were introduced, becoming the first-line treatment by 2007/2008. Below is a series of events occurred from 1999 .
 
 
 
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
-knitr::include_graphics("ANG/malaria_prevention_angola.png")
+knitr::include_graphics("ANG/malaria_history.png")
 
 
 ```
@@ -142,6 +148,7 @@ knitr::include_graphics("ANG/malaria_prevention_angola.png")
 
 
 #### **Malaria burden**
+
 
 
 The burden of malaria in Angola accounts for 3.4% of global malaria cases and 3.2% of global malaria deaths.Within the central African region, Angola recorded the second highest (15%) malaria cases. Malaria was responsible for 44% of all reported death is in 2022, rising from 42% in 2021.
@@ -224,54 +231,37 @@ knitr::include_graphics("ANG/healthcare.png")
 
 
 
+
+####  **Malaria data.**
+
+
+
+
 Angola has made significant progress in strengthening its malaria reporting system over the years. Until 2017, the country relied primarily on paper-based reporting. Subsequently, digital tools were introduced leading to the adoption of the District Health Information Software 2 (DHIS2) as the national platform for malaria data reporting and management. 
 
+It implemented the DHIS2 digital health information system in 2018 to strengthen malaria case detection, situation reporting, and active surveillance. Since then, reporting rates have improved significantly across supported municipalities, highlighting the system’s effectiveness. The DHIS2 platform is now operational nationwide and collects a range of key malaria indicators, including the number of suspected malaria cases, the number of individuals tested, and the number of confirmed positive cases. The system also dis-aggregates data by age groups—such as children under five and adults—to support targeted interventions. It captures data reported by community health workers (CHWs), including the number of patients tested and treated for malaria at the community level. These improvements have enhanced Angola’s capacity to monitor malaria trends, support timely response, and guide resource allocation at both facility and community levels.
 
-```{r,echo = FALSE, message=FALSE, warning=FALSE}
 
-# Create data frame
-data <- data.frame(
-  Year = 2017:2022,
-  Completeness = c(82, 84, 87, 89, 90.5, 92.1),
-  Timeliness = c(55, 60, 67, 72, 77, 80.5)
-)
+**Key survey Indicators**
+```{r}
 
-# Reshape for ggplot
-data_long <- pivot_longer(data, cols = c(Completeness, Timeliness), 
-                          names_to = "Metric", values_to = "Value")
-
-# Create the plot
-p <- ggplot(data_long, aes(x = Year, y = Value, color = Metric, shape = Metric)) +
-  geom_line(size = 1.2) +
-  geom_point(size = 3) +
-  scale_color_manual(values = c("Completeness" = "green", "Timeliness" = "blue")) +
-  labs(title = "Malaria Monthly Report Performance (2017–2022)",
-       x = "Year", y = "Percentage (%)", color = "Metric", shape = "Metric") +
-  theme_minimal(base_size = 14)+
-  theme_bw()
- 
-
-# Add annotations
-p + 
-  annotate("text", x = 2017.1, y = 85, label = "Mostly Paper-Based", hjust = 0, size = 2) +
-  annotate("segment", x = 2017.1, xend = 2017, y = 85, yend = 82, 
-           arrow = arrow(length = unit(0.2, "cm")), color = "black") +
-  
-  annotate("text", x = 2019.1, y = 90, label = "DHIS2 Rollout Begins", hjust = 0, size = 2, color = "darkorange") +
-  annotate("segment", x = 2019.1, xend = 2019, y = 90, yend = 87, 
-           arrow = arrow(length = unit(0.2, "cm")), color = "darkorange") +
-  
-  annotate("text", x = 2021.1, y = 93, label = "Mobile Tools Adopted", hjust = 0, size = 2, color = "purple") +
-  annotate("segment", x = 2021.1, xend = 2021, y = 93, yend = 90.5, 
-           arrow = arrow(length = unit(0.2, "cm")), color = "purple") +
-  
-  annotate("text", x = 2022, y = 94, label = "Full Digital (DHIS2)", hjust = 0.5, size = 2, color = "darkgreen") +
-  annotate("segment", x = 2022, xend = 2022, y = 94, yend = 92.1, 
-           arrow = arrow(length = unit(0.2, "cm")), color = "darkgreen")
-
+knitr::include_graphics("ANG/malaria_data1.png")
 
 
 ```
+
+
+
+
+
+```{r}
+
+knitr::include_graphics("ANG/malaria_data.png")
+
+```
+
+
+
 
 
 
@@ -281,7 +271,7 @@ p +
 
 The country encompasses both the southern edge of subtropical humid regions of Africa in the north of the country, with tropical and subtropical forests and the northern edge of the Namib Desert in Angola's southwest with arid areas of desert and steppe along its coastal and southern edges. Mayombe forest is the largest forest in Africa, spreads throughout Angola's NW province of Cabinda as well as regions of the DRC, RoC and Gabon fed by the Congo river,the second longest in Africa. In the interior, Mount Moco Angola's highest mountain (peak at 2620m)is located in Huambo province. 
 
-The variation in rainfall (highest in the NE, along the border with the DRC, and lowest in the xeric SW), temperature, altitude and biome in turn affect the availability of suitable breeding grounds for the mosquitoes vectors [50,51,52,53]. In addition to rainfall, providing habitats for mosquito larvae, temperature (and possibly its fluctuations) are key factors in determining malaria transmission intensity.
+The variation in rainfall (highest in the NE, along the border with the DRC, and lowest in the xeric SW), temperature, altitude and biome in turn affect the availability of suitable breeding grounds for the mosquitoes vectors. In addition to rainfall, providing habitats for mosquito larvae, temperature (and possibly its fluctuations) are key factors in determining malaria transmission intensity.
 
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
@@ -343,3 +333,9 @@ knitr::include_graphics("ANG/malaria_stratification.png")
 8. Ministry of Health(MOH)
 9. [Plasmodium falciparum drug resistance](https://malariajournal.biomedcentral.com/articles/10.1186/s12936-016-1122-z)
 10. VER ANGOLA
+11. https://dhsprogram.com/pubs/pdf/MIS2/MIS2.pdf
+12. https://dhsprogram.com/pubs/pdf/SR238/SR238.pdf
+13. https://dhsprogram.com/pubs/pdf/MIS11/MIS11.pdf
+14. (Angola Malaria indicator survey 2011 [MIS11]
+15. https://dhsprogram.com/pubs/pdf/MF19/MF19.pdf -Angola DHS 2015-16 Malaria Fact
+
