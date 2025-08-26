@@ -165,7 +165,7 @@ Malaria diagnostic and treatment services are offered by 6,357 public institutio
 Moreover, community health workers (CHWs) play important role by routinely collecting community health data during household visits and community activities, and facilitating referrals from community level to health facilities. CHWs use MTUHA Book No. 3 for daily data collection, with tools stored at the health facility. Monthly, the facility in-charge will compile summaries into MTUHA Book No.10 for entry into the HMIS/DHIS2 system or submission to the council for entry ([Community Health Roadmap](https://www.communityhealthdeliverypartnership.org/media/526/file/Tanzania+mainland+approved+CHR+profile+24th+Nov+2023.pdf.pdf)). Currently, there are 20,487 CHWs and the country plans to reach over 150,000 CHWs in the period of 5 years.
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("TZN/HS.png")
+knitr::include_graphics("TZN/HS.PNG")
 ```
 
 #### **Types of Malaria Data**
@@ -173,13 +173,13 @@ knitr::include_graphics("TZN/HS.png")
 Mainland Tanzania adopted the District Health Information System (DHIS2) platform in 2013 by transitioning the national routine health information system (RHIS), and integrating the electronic Integrated Disease Surveillance and Response (e-IDSR) for priority disease into DHIS2. The data flow from health facilities (HFs) through councils and regions to the national level. The key malaria indicators reported through routine surveillance system are shown in the table below. 
 
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("TZN/rdata.jpg")
+knitr::include_graphics("TZN/rdata.JPG")
 ```
 
 We have compiled the common national surveys along with the malaria indicators collected. Additionally, the Tanzania National Malaria Control Program (NMCP) conducts the School Malaria Parasitaemia Survey (SMPS) every two years to monitor malaria prevalence among primary school children. However, this data is not publicly available. The most recent survey was conducted in July, 2023 ([UDSM DHIS2 LAB](https://dhis2.udsm.ac.tz/project/school-malaria-parasitaemia-survey-smps-in-cmis/)).
 
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("TZN/sdata.jpg")
+knitr::include_graphics("TZN/sdata.JPG")
 ```
 
 
@@ -188,7 +188,7 @@ knitr::include_graphics("TZN/sdata.jpg")
 The graphic below illustrates the trend of malaria prevalence in Tanzania since 2004, alongside significant events that have occurred. The prevalence values are based on data from Demographic and Health Surveys (DHS) and Malaria Indicator Surveys (MIS). Additionally, the country has implemented three National Malaria Strategic Plans (NMSPs) at varying intervals.
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("TZN/MHist.png")
+knitr::include_graphics("TZN/MHist.PNG")
 ```
 
 #### **Weather and Seasonality**

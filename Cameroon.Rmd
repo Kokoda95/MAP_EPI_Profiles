@@ -118,7 +118,7 @@ Cameroon’s health system is decentralized to the regions, there are 10 regions
 Cameroon also has 9,575 Community Health Workers (CHWs) providing preventive and curative care. CHWs report to the leading health facilities within their areas, with data integrated into the Health Management Information System (HMIS). Despite their critical role, Cameroon has not yet met its target of 15,000 CHWs, leaving some areas under-served.
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("CMRN/HS.png")
+knitr::include_graphics("CMRN/HS.PNG")
 ```
 
 #### **Types of Malaria Data**
@@ -126,13 +126,13 @@ knitr::include_graphics("CMRN/HS.png")
 The District Health Information System (DHIS2) was adopted by Cameroon in 2015. Health facilities and CHWs in Cameroon collect data using harmonized registers, consolidating it weekly for disease surveillance and monthly for routine activities via paper forms. Facilities with digital capacity enter data directly into the DHIS2 platform, while others send paper-based reports to health districts for entry. The CHWs report data of all ages as highlighted in the table below. The routine health system collect the following malaria indicator data:
 
 ```{r echo=FALSE, out.width="100%", out.height="100%"}
-knitr::include_graphics("CMRN/rdata.jpg")
+knitr::include_graphics("CMRN/rdata.JPG")
 ```
 
 Moreover, the country has gathered information on malaria prevention, treatment and prevalence through surveys such as Demographic Health Surveys (DHS), Malaria Indicator Cluster Surveys (MICS), Malaria Indicator Surveys (MIS), and behaviors influence the prevention and treatment practices through Malaria Behavior Survey (MBS). 
 
 ```{r echo=FALSE, out.width="100%", out.height="100%"}
-knitr::include_graphics("CMRN/sdata.jpg")
+knitr::include_graphics("CMRN/sdata.JPG")
 ```
 
 #### **History of Malaria**
@@ -140,7 +140,7 @@ knitr::include_graphics("CMRN/sdata.jpg")
 The graphic below illustrates the trend of malaria prevalence in Cameroon since 2004, alongside significant events that have occurred. The prevalence values are based on data from Demographic and Health Surveys (DHS) and Malaria Indicator Surveys (MIS). Additionally, the country has implemented four National Malaria Strategic Plans (NMSPs) at varying intervals.
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("CMRN/MHist.png")
+knitr::include_graphics("CMRN/MHist.PNG")
 ```
 
 #### **Weather and Seasonality**

@@ -128,20 +128,20 @@ knitr::include_graphics("BNN/HS.jpg")
 National Health Management System in Benin adopted the DHIS2 since 2015 for handling health data including malaria cases. Health facilities submit their reports to the health zone central office (ZS statistician) to be entered into DHIS2. Community health workers (CHWs) report to their NGOs, and then the data is shared with ZS statistician who enters into DHIS2. Only data for children under 5 years of age are reported by CHWs as highlighted in the table below. The routine health system collects the following malaria indicators data;
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("BNN/rdata.jpg")
+knitr::include_graphics("BNN/rdata.JPG")
 ```
 
 Like other countries, Benin has gathered data on malaria prevalence, treatment and prevention through Demographic Health Surveys (DHS), Malaria Indicator Surveys (MIS), Malaria Indicator Cluster Surveys (MICS), and behaviors on prevention and treatment through the Malaria Behavior Survey (MBS).
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("BNN/sdata.jpg")
+knitr::include_graphics("BNN/sdata.JPG")
 ```
 
 #### **History of Malaria**
 The graphic below illustrates the trend of malaria prevalence in Benin since 2004, alongside significant events that have occurred. The prevalence values are based on data from Demographic and Health Surveys (DHS) and Malaria Indicator Surveys (MIS). Additionally, the country has implemented four National Malaria Strategic Plans (NMSPs) at varying intervals.
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("BNN/MHist.png")
+knitr::include_graphics("BNN/MHist.PNG")
 ```
 
 #### **Weather and Seasonality**
