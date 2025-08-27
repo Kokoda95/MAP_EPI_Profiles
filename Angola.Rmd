@@ -38,6 +38,7 @@ knitr::opts_chunk$set(
 # install.packages("malariaAtlas")
 # install.packages("janitor")
 # install.packages("gt")
+#install.packages("tmap")
 ```
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
@@ -60,6 +61,7 @@ library(kableExtra)
 library(janitor)
 library(malariaAtlas)
 library(gt)
+library(tmap)
 
 ```
 
@@ -71,13 +73,13 @@ Angola's health landscape is dominated by endemic, communicable and parasitic di
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 
-# Download shapefile for angola
-angola <- ne_countries(scale = "medium", country = "Angola", returnclass = "sf")
-
-#shapefile from malariaAtlas
-Ang <- getShp(country = "Angola", admin_level = c("admin1"))
-
-# Download angola's regions shapefile
+# # Download shapefile for angola
+# angola <- ne_countries(scale = "medium", country = "Angola", returnclass = "sf")
+# 
+# #shapefile from malariaAtlas
+# Ang <- getShp(country = "Angola", admin_level = c("admin1"))
+# 
+# # Download angola's regions shapefile
 angola_province <- ne_states(country = "Angola", returnclass = "sf")
 
 # #Download angola's rainfall data for timeseries to date.
@@ -128,29 +130,29 @@ angola_province <- ne_states(country = "Angola", returnclass = "sf")
 
 
 
-#Create a data frame for Luanda (Capital City)
-capital_city <- data.frame(name = "Luanda", lon = 13.2894, lat = -8.8383)
-capital_city_sf <- st_as_sf(capital_city, coords = c("lon", "lat"), crs = 4326)
-#capital_city_sf <- st_transform(capital_city_sf, crs = crs(angola_elev))
-
-
-#creating Angola map
-
-ggplot(data = Ang)+
-  geom_sf(data = angola, fill = "white", color = "black", size = 0.5) +
-  geom_sf(aes(fill = name_1), color = "black")+
-  geom_sf_text(aes(label = name_1), size = 3, color = "black")+
-  geom_sf(data = capital_city_sf, color = "blue", size = 3, shape = 16) +
-  annotate("text", x = 13.2894, y = -8.8383, label = "", 
-           hjust = -0.1, color = "blue", fontface = "bold", size = 4) +
-  coord_sf() +
-  scale_fill_brewer(palette = "Set3") +
-                 theme_minimal()+
-                 theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
-                       axis.text = element_blank(),
-    axis.ticks = element_blank(),
-    axis.title = element_blank(),
-    panel.grid = element_blank())
+# #Create a data frame for Luanda (Capital City)
+# capital_city <- data.frame(name = "Luanda", lon = 13.2894, lat = -8.8383)
+# capital_city_sf <- st_as_sf(capital_city, coords = c("lon", "lat"), crs = 4326)
+# #capital_city_sf <- st_transform(capital_city_sf, crs = crs(angola_elev))
+# 
+# 
+# #creating Angola map
+# 
+# ggplot(data = Ang)+
+#   geom_sf(data = angola, fill = "white", color = "black", size = 0.5) +
+#   geom_sf(aes(fill = name_1), color = "black")+
+#   geom_sf_text(aes(label = name_1), size = 3, color = "black")+
+#   geom_sf(data = capital_city_sf, color = "blue", size = 3, shape = 16) +
+#   annotate("text", x = 13.2894, y = -8.8383, label = "", 
+#            hjust = -0.1, color = "blue", fontface = "bold", size = 4) +
+#   coord_sf() +
+#   scale_fill_brewer(palette = "Set3") +
+#                  theme_minimal()+
+#                  theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
+#                        axis.text = element_blank(),
+#     axis.ticks = element_blank(),
+#     axis.title = element_blank(),
+#     panel.grid = element_blank())
 
 
 
@@ -190,9 +192,67 @@ ggplot(data = Ang)+
 # 
 
 
+# --- Load Angola shapefiles ---
+angola <- ne_countries(scale = "medium", country = "Angola", returnclass = "sf")
+Ang <- getShp(country = "Angola", admin_level = "admin1")   # provinces
+
+# --- Capital city: Luanda ---
+capital_city <- data.frame(name = "Luanda", lon = 13.2894, lat = -8.8383)
+capital_city_sf <- st_as_sf(capital_city, coords = c("lon", "lat"), crs = 4326)
+
+# --- Province -> Zone mapping (edit if your province names differ) ---
+zone_lut <- tibble::tribble(
+  ~name_1,          ~zone,
+  "Cabinda",        "North",
+  "Zaire",          "North",
+  "Uige",           "North",
+  "Bengo",          "North",
+  "Luanda",         "North",
+  "Kwanza Norte",   "North",    # check spelling, sometimes "Cuanza Norte"
+  "Malanje",        "North",
+  "Lunda Norte",    "East",
+  "Lunda Sul",      "East",
+  "Moxico",         "East",
+  "Kwanza Sul",     "Central",  # check spelling, sometimes "Cuanza Sul"
+  "Bie",            "Central",
+  "Huambo",         "Central",
+  "Benguela",       "Central",
+  "Huila",          "South",
+  "Cunene",         "South",
+  "Namibe",         "South",
+  "Kuando Kubango", "South"     # check spelling, sometimes "Cuando Cubango"
+)
+
+Ang <- Ang %>%
+  left_join(zone_lut, by = "name_1")
+
+# --- Label points (for province names inside polygons) ---
+label_points <- st_point_on_surface(Ang)
+
+# --- Plot ---
+ggplot(data = Ang) +
+  geom_sf(data = angola, fill = "white", color = "black", size = 0.5) +
+  geom_sf(aes(fill = zone), color = "black") +   # <-- use your new zone variable
+  geom_sf_text(aes(label = ifelse(name_1 == "Luanda", "", name_1)), 
+               size = 3, color = "black") +      # <-- suppress Luanda province label
+  geom_sf(data = capital_city_sf, color = "blue", size = 3, shape = 16) +
+  annotate("text", x = 13.2894, y = -8.8383, label = "Luanda", 
+           hjust = -0.1, color = "blue", fontface = "bold", size = 4) +
+  coord_sf() +
+  scale_fill_brewer(palette = "Set3") +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(hjust = 0.5),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  )
+
 ```
 
-The country has a high fertility rate, it is the second highest in Africa and one of the highest in the world with around 6 children per woman (2018) [National Institute of Statistics of Angola]. This impacts on malaria control due to high demand for antenatal services [@Malariacasemanagement:operations manual,WHO 2019]
+The country has a high fertility rate, it is the second highest in Africa and one of the highest in the world with around 6 children per woman (2018) [National Institute of Statistics of Angola]. This impacts on malaria control due to high demand for antenatal services.
 
 ```{r}
 #creating data for population change over years.
@@ -203,6 +263,8 @@ angola_pop <- data.frame(Age_group = c("Total","0-4 years", "5-14 years", "15+ y
           `2023` = c(34094077, 5431240, 9697760, 18965077),
           `2024` = c(35121734, 5549133, 9832392, 19740209),
           `2025` = c(36170961, 5663200, 9955179, 20552582))
+
+names(angola_pop) <- c("Age_group", "2021", "2022", "2023", "2024", "2025")
 
 
 # Define formatting function
@@ -225,7 +287,7 @@ table_formatting(
 
 ```
 
-### History of malaria.
+### **History of malaria.**
 
 During colonial times, quinine was used, later replaced by chloroquine in the 1950s. By the late 1970s, drug resistance to chloroquine emerged and by the early 2000s, artemisinin-based combination therapies (ACTs) were introduced, becoming the first-line treatment by 2007/2008. Below is a series of events occurred from 1999 .
 
@@ -349,7 +411,7 @@ data <- tribble(
 
 # Render the table
 kable(data, col.names = NULL, align = c("l", "r")) %>%
-  kable_styling(full_width = FALSE, position = "left") %>%
+  kable_styling(full_width = TRUE, position = "center") %>%
   row_spec(which(grepl("\\*\\*", data$Category)), bold = TRUE, background = "#C1440E", color = "white") %>%
   row_spec(1, background = "#8B2500", color = "white") %>%
   row_spec(5, background = "#D2691E", color = "white") %>%
@@ -478,6 +540,10 @@ malaria_data %>%
   tab_style(
     style = cell_text(weight = "bold", color = "white"),
     locations = cells_column_labels()
+  ) %>% 
+  tab_options(
+    table.width = pct(100),
+    table.align = "center"
   )
 
 
